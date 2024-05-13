@@ -20,7 +20,7 @@ class MedCard(models.Model):
     count = models.IntegerField(default=19)
 
     def __str__(self):
-        return self.name
+        return self.dori_nomi
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
