@@ -13,3 +13,11 @@ def index(request):
 
     }
     return render(request, ['index.html'] , contex)
+
+
+def main(request):
+    medcard = MedCard.objects.all()
+    contex = {
+        'MedCard':medcard,
+    }
+    return render(request, ['main.html'] , contex)
