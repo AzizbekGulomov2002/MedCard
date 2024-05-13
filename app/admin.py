@@ -4,8 +4,8 @@ from .models import MedCard, Logo
 
 class MedCardAdmin(admin.ModelAdmin):
     list_display = [
-        "name",
-        "price",
+        "dori_nomi",
+        "narx",
     ]
     list_per_page = 10
     class Meta:
