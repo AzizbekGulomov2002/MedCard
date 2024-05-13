@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-!7g1m!g8y8ne%%*m5x5j(2ic!yc3(0&v0=ni@rg^%4)1+)jx#y
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://medcard.pythonanywhere.com"]
 
 
 # Application definition
