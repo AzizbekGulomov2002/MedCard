@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Label</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f5f5f5;
+			}
+
+			.label-container {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				gap: 10px;
+			}
+
+			.label-card {
+				width: 67mm;
+				height: 34mm;
+				background-color: #ffffff;
+				border: 2px solid #000000;
+				padding: 5px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				display: flex;
+			}
+
+			.left-column {
+				width: 10%;
+				padding: 0px;
+			}
+
+			.right-column {
+				width: 90%;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.header {
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+				margin-bottom: 5px;
+			}
+
+			.product-name {
+				font-size: 10px;
+				font-weight: bold;
+				margin-bottom: 3px;
+			}
+
+			.usage-instructions {
+				font-size: 10px;
+				margin-bottom: 3px;
+			}
+
+			.expiration-date,
+			.price {
+				font-size: 6px;
+				font-weight: bold;
+			}
+
+			.pharmacy-symbol {
+				float: right;
+				margin-top: -5px;
+				height: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="label-container">
+			<!-- Card 1 -->
+			{% for card in MedCard %}
+			<div class="label-card">
+				<div class="left-column" style="position: relative">
+					<div
+						style="
+							writing-mode: vertical-rl;
+							transform: rotate(-180deg);
+							font-size: 7px;
+							position: absolute;
+							left: 50%;
+							top: 0;
+							transform: translateX(-50%);
+						"
+					>
+						<b
+							><p style="text-align: center">
+								Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд
+								бўлинг
+							</p></b
+						>
+					</div>
+					<div
+						style="
+							position: absolute;
+							left: 150%;
+							height: 100%;
+							border-left: 20px solid rgb(19, 222, 19);
+						"
+					></div>
+				</div>
+				<div class="right-column">
+					{% for logo in Logo %}
+					<img
+						src="{{ logo.logo.url }}"
+						alt="Pharmacy Symbol"
+						class="pharmacy-symbol"
+					/>
+					{% endfor %}
+					<div style="text-align: center; font-size: 15px" class="product-name">
+						{{ card.type }}
+					</div>
+					<div class="align-left">
+						<!-- New container for left-aligned text -->
+						<div style="text-align: center" class="product-name">
+							“Нафосат” Д.Д.И.Ч дорихонаси
+						</div>
+						<div class="product-name">{{ card.pharmacy }}</div>
+						<div style="font-size: 11px" class="product-name">
+							<span style="background-color: aqua; display: inline-block">
+								{{ card.description }}</span
+							>
+						</div>
+						<div style="text-decoration: underline" class="usage-instructions">
+							Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}
+						</div>
+						<div style="text-decoration: underline" class="usage-instructions">
+							Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}
+						</div>
+						<b
+							><div class="usage-instructions">
+								<span
+									style="
+										background-color: rgb(238, 199, 59);
+										display: inline-block;
+										font-size: 14px;
+									"
+									>Нархи: {{ card.price }} сум</span
+								>
+							</div></b
+						>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+			<!-- Copy this card 19 more times for a total of 20 cards -->
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+
+			{% for card in MedCard %}
+        <div class="label-card">
+            <div class="left-column" style="position: relative;">
+                <div style="writing-mode: vertical-rl; transform: rotate(-180deg); font-size: 7px; position: absolute; left: 50%; top: 0; transform: translateX(-50%);">
+                    <b><p style="text-align: center;">Салқин ва ёруғлик тушмайдиган жойда сақлансин.Болаларга эҳтиёд бўлинг</p></b>
+                </div>
+                <div style="position: absolute; left: 150%; height: 100%; border-left: 20px solid rgb(19, 222, 19);"></div>         
+            </div>
+            <div class="right-column">
+                {% for logo in Logo %}
+                <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
+                {% endfor %}
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div class="align-left"> <!-- New container for left-aligned text -->
+                    <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
+                    <div class="product-name">{{ card.pharmacy }}</div>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+			<!-- Paste the same .label-card section here -->
+		</div>
+	</body>
+</html>

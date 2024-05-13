@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .row-2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col-3 {
+        width: calc(25% - 20px);
+        margin: 10px;
+    }
+
+    .card {
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .content {
+        padding: 15px;
+        /* Paddingni o'zgartirish */
+        background-color: #f0f0f0;
+        /* Orqa fon rangini o'zgartirish */
+        border-radius: 8px;
+        /* Border radiusni o'zgartirish */
+        position: relative;
+        /* Position ni o'zgartirish */
+    }
+
+    .rotated-text {
+        position: absolute;
+        /* Position ni absolute qilish */
+        top: 50%;
+        /* Yuqoridan 50% joylash */
+        left: 0;
+        /* Chap tomonda joylash */
+        transform: translateY(-50%) rotate(-90deg);
+        /* Tekshirish tartibda joylash */
+        width: 20%;
+        /* 20% lik qismi */
+    }
+
+    .rotated-text p {
+        margin: 0;
+        /* Matnni qirra bo'lmaydi */
+        font-size: 10px;
+        /* Matn o'lchami */
+    }
+
+
+
+    h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    p {
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .right-text {
+        position: absolute;
+        /* Position ni absolute qilish */
+        top: 0;
+        /* Yuqoridan 0 joylash */
+        right: 0;
+        /* O'ng tomonda joylash */
+        width: 80%;
+        /* 80% lik qismi */
+    }
+
+    .right-text p {
+        margin: 0;
+        /* Matnni qirra bo'lmaydi */
+        font-size: 9px;
+        /* Matn o'lchami */
+    }
+</style>
+
+<body>
+    <div class="row-2">
+        <div class="col-3">
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- ssf -->
+        <div class="col-3">
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- sdsdf -->
+        <div class="col-3">
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- kjdsn -->
+        <div class="col-3">
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="card">
+                <div class="content">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis ligula, suscipit a varius
+                        eu, commodo vel purus. Ut et nunc risus. </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
