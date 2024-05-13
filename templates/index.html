@@ -126,14 +126,14 @@
 						<div class="product-name">{{ card.pharmacy }}</div>
 						<div style="font-size: 11px" class="product-name">
 							<span style="background-color: aqua; display: inline-block">
-								{{ card.description }}</span
+								{{ card.maxal }}</span
 							>
 						</div>
 						<div style="text-decoration: underline" class="usage-instructions">
-							Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}
+							Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}
 						</div>
 						<div style="text-decoration: underline" class="usage-instructions">
-							Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}
+							Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}
 						</div>
 						<b
 							><div class="usage-instructions">
@@ -143,7 +143,7 @@
 										display: inline-block;
 										font-size: 14px;
 									"
-									>Нархи: {{ card.price }} сум</span
+									>Нархи: {{ card.narx }} сум</span
 								>
 							</div></b
 						>
@@ -165,14 +165,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -192,14 +192,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -219,14 +219,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -246,14 +246,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -273,14 +273,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -300,14 +300,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -327,14 +327,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -354,14 +354,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -381,14 +381,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -408,14 +408,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -435,14 +435,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -462,14 +462,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -489,14 +489,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -516,14 +516,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -543,14 +543,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -570,14 +570,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -597,14 +597,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -624,14 +624,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             
@@ -651,14 +651,14 @@
                 {% for logo in Logo %}
                 <img src="{{ logo.logo.url }}" alt="Pharmacy Symbol" class="pharmacy-symbol">
                 {% endfor %}
-                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.type }}</div>
+                <div style="text-align: center;font-size: 15px;" class="product-name">{{ card.ichish_turi }}</div>
                 <div class="align-left"> <!-- New container for left-aligned text -->
                     <div style="text-align: center;" class="product-name">“Нафосат” Д.Д.И.Ч дорихонаси</div>
                     <div class="product-name">{{ card.pharmacy }}</div>
-                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.description }}</span></div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.added_date|date:"d.m.Y" }}</div>
-                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.deadline|date:"d.m.Y" }}</div>
-                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.price }} сум</span></div></b>
+                    <div style="font-size: 11px;" class="product-name">  <span style="background-color: aqua; display: inline-block;"> {{ card.maxal }}</span></div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Тайёрланган сана:{{ card.tayyorlandi|date:"d.m.Y" }}</div>
+                    <div style='text-decoration: underline;' class="usage-instructions">Яроқлилик муддати: {{ card.yaroqlilik|date:"d.m.Y" }}</div>
+                    <b><div class="usage-instructions"><span style="background-color: rgb(238, 199, 59); display: inline-block;font-size: 14px;">Нархи: {{ card.narx }} сум</span></div></b>
                 </div>
             </div>
             

@@ -10,12 +10,12 @@ class Logo(models.Model):
     
 
 class MedCard(models.Model):
-    type = models.CharField(max_length=100)
-    name = models.CharField(max_length=500)
-    description = models.CharField(max_length=200)
-    added_date = models.DateField()
-    deadline = models.DateField()
-    price = models.IntegerField()
+    ichish_turi = models.CharField(max_length=100)
+    dori_nomi = models.CharField(max_length=500)
+    maxal = models.CharField(max_length=200)
+    tayyorlandi = models.DateField()
+    yaroqlilik = models.DateField()
+    narx = models.IntegerField()
 
     count = models.IntegerField(default=19)
 
@@ -28,12 +28,12 @@ class MedCard(models.Model):
             instances = []
             for _ in range(self.count):
                 instances.append(MedCard(
-                    type = self.type,
-                    name=self.name,
-                    description=self.description,
-                    added_date=self.added_date,
-                    deadline=self.deadline,
-                    price=self.price
+                    ichish_turi = self.ichish_turi,
+                    dori_nomi=self.dori_nomi,
+                    maxal=self.maxal,
+                    tayyorlandi=self.tayyorlandi,
+                    yaroqlilik=self.yaroqlilik,
+                    narx=self.narx
                 ))
             MedCard.objects.bulk_create(instances)
     
